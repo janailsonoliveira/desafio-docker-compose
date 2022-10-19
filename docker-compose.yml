@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  apache:
+    image: httpd:latest
+    container_name: desafio-docker-compose
+    ports:
+      - '8080:80'
+    volumes:
+      - ./site:/usr/local/apache2/htdocs
+    networks:
+      - network-desafio
+networks:
+  network-desafio:
+    driver: bridge
